@@ -31,11 +31,37 @@ Standard kelulusan adalah minimum 70.
 
 function getReport(studentGrades) {
   var forOutput = [];
+  var counter = 0;
   for (var i = 0; i < studentGrades.length; i++) {
     if (studentGrades[i].classCode !== "checked") {
-      
+      forOutput.push([studentGrades[i].classCode, [], []]);
+      if(studentGrades[i].score >= 70) {
+        forOutput[counter][1].push(studentGrades[i].name);
+      } else {
+        forOutput[counter][2].push(studentGrades[i].name);
+      }
+      for (var j = i + 1; j < studentGrades.length; j++) {
+        if (studentGrades[j].classCode === studentGrades[i].classCode) {
+          if(studentGrades[j].score >= 70) {
+            forOutput[counter][1].push(studentGrades[j].name);
+          } else {
+            forOutput[counter][2].push(studentGrades[j].name);
+          }
+          studentGrades[j].classCode = "checked";
+        }
+      }
+      counter++
     }
   }
+  var output = [];
+  for (var k = 0; k < forOutput.length; k++) {
+    output.push({
+      classCode: forOutput[k][0],
+      passed: forOutput[k][1],
+      failed: forOutput[k][2]
+    })
+  }
+  return output;
 }
 
 var grades1 = [
@@ -57,3 +83,4 @@ console.log(getReport(grades1));
   { classCode: 'B', passed: [], failed: [ 'Mike', 'Osass' ] },
   { classCode: 'C', passed: [ 'Budi', 'Yolo' ], failed: [ 'Arthur' ] },
 ]
+*/
