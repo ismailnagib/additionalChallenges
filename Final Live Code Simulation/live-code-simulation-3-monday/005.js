@@ -47,7 +47,37 @@
 */
 
 function getMemberSummary (member) {
-// Ambil umur //
+  if (member.length === 0) {
+    return "NO DATA"
+  }
+  var oldest = member[0].age;
+  var oldestIndex = 0;
+  var youngest = member[0].age;
+  var youngestIndex = 0;
+  var total = member[0].age;
+  for (var i = 1; i < member.length; i++) {
+    if (member[i].age > oldest) {
+      oldest = member[i].age;
+      oldestIndex = i;
+    } else if (member[i].age < youngest) {
+      youngest = member[i].age;
+      youngestIndex = i;
+    }
+    total += member[i].age;
+  }
+  var output = {
+    total_member: member.length,
+    oldest_member: {
+      full_name: member[oldestIndex].first_name + " " + member[oldestIndex].last_name,
+      age: oldest
+    },
+    youngest_member: {
+      full_name: member[youngestIndex].first_name + " " + member[youngestIndex].last_name,
+      age: youngest
+    },
+    average_member_age: Math.round(total / member.length)
+  }
+  return output;
 }
 
 console.log(getMemberSummary([{

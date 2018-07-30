@@ -23,3 +23,22 @@ WHILE i < 8
   IF i equals to 5
     ADD num by 1
 */
+
+// STORE 'num' with any number
+// STORE 'check' with value equals true
+// IF 'num' IS LESS THAN 2 THEN
+//   CHANGE 'check' to false
+// ELSE IF 'num' % 2 equals 0 AND 'num' % 3 equals 0 THEN
+//   CHANGE 'check' to false
+// ELSE IF 'num' IS GREATER THAN OR EQUALS 25 THEN
+//   STORE 'i' equals 5
+//   WHILE 'i' * 'i' IS LESS THAN OR EQUALS 'num'
+//     IF 'num' % 'i' equals 0 THEN
+//       CHANGE 'check' to false
+//     END IF
+//   END LOOP
+//   ADD 'i' by 2
+// END IF
+// IF 'check' equals true THEN
+//   RETURN "INI BILANGAN PRIMA"
+// END IF

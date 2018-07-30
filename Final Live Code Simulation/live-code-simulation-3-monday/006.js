@@ -17,9 +17,21 @@
 */
 
 function consonantCounterRecursive(sentences) {
-
+  var consonant = "BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz";
+  var checkThis = sentences[0];
+  var value = 0;
+  for (var i = 0; i < consonant.length; i++) {
+    if (checkThis === consonant[i]) {
+      value = 1;
+    }
+  }
+  if (sentences.length === 1) {
+    return value;
+  } else {
+    return value + consonantCounterRecursive(sentences.slice(1));
+  }
 }
 
-console.log(consonantCounterRecursive('alDi Suka MakAn baksO')) //13
+console.log(consonantCounterRecursive('alDi Suka MakAn baksO')) // 10 (karena spasi tidak termasuk abjad/alphabet kan?)  // 13 itu kalo spasinya diitung
 console.log(consonantCounterRecursive('AziZy')) // 3
 console.log(consonantCounterRecursive('awt6an')) // 3

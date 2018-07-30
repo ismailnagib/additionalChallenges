@@ -20,7 +20,17 @@ output: [ [ 1 ] , [ 2, 2 ] ]
 */
 
 function piramidaArray(number) {
-
+    if (String(number) === number || number === 0) {
+        return 0;
+    }
+    var output = [[]];
+    for (var i = 1; i < number; i++) {
+        output.push([]);
+        for (var j = 0; j < i; j++) {
+            output[i].push(i);
+        }
+    }
+    return output;
 }
 
 console.log(piramidaArray(2)); // [ [], [ 1 ] ]

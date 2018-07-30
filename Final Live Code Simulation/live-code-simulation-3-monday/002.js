@@ -27,8 +27,48 @@ galonChecker(['F','H','F'])
 output: jumlah F: 2, jumlah H: 1, jumlah E: 0. Dan totalnya adalah: 2.5
 */
 
+// PSEUDOCODE
+    // STORE 'array' with any array
+    // IF length of 'array' IS GREATER THAN 0 THEN
+    //   STORE 'output' with an array with value equals 0, 0, 0, 0
+    //   STORE 'i' with value equals 0
+    //   WHILE 'i' IS LESS THAN length of 'array'
+    //     IF INDEX 'i' of 'array' equals "F" THEN
+    //       ADD INDEX 0 of 'output' by 1
+    //       ADD INDEX 3 of 'output' by 1
+    //     ELSE IF INDEX 'i' of 'array' equals "H" THEN
+    //       ADD INDEX 1 of 'output' by 1
+    //       ADD INDEX 3 of 'output' by 0.5
+    //     ELSE IF INDEX 'i' of 'array' equals "E" THEN
+    //       ADD INDEX 2 of 'output' by 1
+    //     END IF
+    //   END LOOP
+    //   RETURN "jumlah F: " + INDEX 0 of 'output' + ", jumlah H: " + INDEX 1 of 'output' + ", jumlah E: " + INDEX 2 of 'output' + ". Dan totalnya adalah: " + INDEX 3 of 'output'
+    // ELSE THEN
+    //   RETURN "NO DATA"
+    // END IF
+    
+
+
+
 function galonChecker(array) {
-  // only write code here
+  if (array.length > 0) {
+    var output = [0, 0, 0, 0];
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] === "F") {
+        output[0]++;
+        output[3]++;
+      } else if (array[i] === "H") {
+        output[1]++;
+        output[3] += 0.5;
+      } else if (array[i] === "E") {
+        output[2]++;
+      }
+    }
+    return "jumlah F: " + output[0] + ", jumlah H: " + output[1] + ", jumlah E: " + output[2] + ". Dan totalnya adalah: " + output[3];
+  } else {
+    return "NO DATA";
+  }
 }
 
 console.log(galonChecker(['F','H','F']));

@@ -12,7 +12,47 @@ WAJIB menggunakan metode rekursif!
 */
 
 function operationEvaluator(operation) {
-  // only code here...
+  if (JSON.stringify(operation.left) == operation.left && JSON.stringify(operation.right) != operation.right) {
+    if (operation.op === '+') {
+      return operation.left + operationEvaluator(operation.right);
+    } else if (operation.op === '-') {
+      return operation.left - operationEvaluator(operation.right);
+    } if (operation.op === '*') {
+      return operation.left * operationEvaluator(operation.right);
+    } if (operation.op === '/') {
+      return operation.left / operationEvaluator(operation.right);
+    }
+  } else if (JSON.stringify(operation.right) == operation.right && JSON.stringify(operation.left) != operation.left) {
+    if (operation.op === '+') {
+      return operation.right + operationEvaluator(operation.left);
+    } else if (operation.op === '-') {
+      return operation.right - operationEvaluator(operation.left);
+    } if (operation.op === '*') {
+      return operation.right * operationEvaluator(operation.left);
+    } if (operation.op === '/') {
+      return operation.right / operationEvaluator(operation.left);
+    }
+  } else if (JSON.stringify(operation.left) != operation.left && JSON.stringify(operation.right) != operation.right) {
+    if (operation.op === '+') {
+      return operationEvaluator(operation.left) + operationEvaluator(operation.right);
+    } else if (operation.op === '-') {
+      return operationEvaluator(operation.left) - operationEvaluator(operation.right);
+    } if (operation.op === '*') {
+      return operationEvaluator(operation.left) * operationEvaluator(operation.right);
+    } if (operation.op === '/') {
+      return operationEvaluator(operation.left) / operationEvaluator(operation.right);
+    }
+  } else if (JSON.stringify(operation.left) == operation.left && JSON.stringify(operation.right) == operation.right) {
+    if (operation.op === '+') {
+      return operation.left + operation.right;
+    } else if (operation.op === '-') {
+      return operation.left - operation.right;
+    } if (operation.op === '*') {
+      return operation.left * operation.right;
+    } if (operation.op === '/') {
+      return operation.left / operation.right;
+    }
+  }
 }
 
 

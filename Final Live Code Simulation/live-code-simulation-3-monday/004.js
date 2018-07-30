@@ -52,7 +52,35 @@ NOTE:
 
 
 function squareNumber(num) {
-  // your code here
+  if (num < 3) {
+    return "Minimal input adalah 3";
+  }
+  var output = [];
+  var fill = 1;
+  for (var i = 0; i < num; i++) {
+    output.push([]);
+    for (var j = 0; j < num; j++) {
+      if (i % 2 === 0) {
+        if (fill % 4 === 0) {
+          output[i].push("#");
+        } else if (fill % 2 === 1) {
+          output[i].push("x");
+        } else {
+          output[i].push("o");
+        }
+      } else {
+        if (fill % 4 === 0) {
+          output[i].unshift("#");
+        } else if (fill % 2 === 1) {
+          output[i].unshift("x");
+        } else {
+          output[i].unshift("o");
+        }
+      }
+      fill++;
+    }
+  }
+  return output;
 }
 
 console.log(squareNumber(3));
@@ -69,6 +97,6 @@ console.log(squareNumber(5));
 //   [ o, x, #, x, o ],
 //   [ x, #, x, o, x ],
 //   [ #, x, o, x, # ],
-//   [ x, o, x, #, o ] ]
+//   [ x, o, x, #, x ] ]
 
 console.log(squareNumber(2)); // Minimal input adalah 3
