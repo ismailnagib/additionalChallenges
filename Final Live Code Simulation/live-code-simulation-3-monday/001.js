@@ -28,7 +28,7 @@ WHILE i < 8
 // STORE 'check' with value equals true
 // IF 'num' IS LESS THAN 2 THEN
 //   CHANGE 'check' to false
-// ELSE IF 'num' % 2 equals 0 AND 'num' % 3 equals 0 THEN
+// ELSE IF 'num' IS GREATER THAN 3 AND 'num' % 2 equals 0 AND 'num' % 3 equals 0 THEN
 //   CHANGE 'check' to false
 // ELSE IF 'num' IS GREATER THAN OR EQUALS 25 THEN
 //   STORE 'i' equals 5
