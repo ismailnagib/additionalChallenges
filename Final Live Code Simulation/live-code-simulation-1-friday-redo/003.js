@@ -44,7 +44,19 @@ RETURN RESULT
 */
 
 function findNotRelative(arr1, arr2) {
-  // your code here
+  var result = [];
+  for (var i = 0; i < arr1.length; i++) {
+    var condition = true;
+    for (var j = 0; j < arr2.length; j++) {
+      if (arr1[i] === arr2[j]) {
+        condition = false;
+      }
+    }
+    if (condition === true) {
+      result.push(arr1[i]);
+    }
+  }
+  return result;
 }
 
 console.log(findNotRelative([ 3, 6, 10, 12, 15 ], [ 1, 3, 5, 10, 16 ])); // [ 6, 12, 15]

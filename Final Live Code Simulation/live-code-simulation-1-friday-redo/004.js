@@ -24,8 +24,19 @@ output: ['dont', 'know', 'what', 'have', 'lose']
 */
 
 function averageLengthWord(words) {
-  // Code here
-
+  var splitted = words.split(" ");
+  var sumLength = 0;
+  for (var i = 0; i < splitted.length; i++) {
+    sumLength += splitted[i].length;
+  }
+  var avgLength = Math.round(sumLength / splitted.length);
+  var output = [];
+  for (var j = 0; j < splitted.length; j++) {
+    if (splitted[j].length === avgLength) {
+      output.push(splitted[j]);
+    }
+  }
+  return output;
 }
 
 console.log(averageLengthWord('Do you want to become a great coder ?')); // ['you']

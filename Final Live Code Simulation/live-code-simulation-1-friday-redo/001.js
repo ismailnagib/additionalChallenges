@@ -57,7 +57,22 @@ RULE:
 */
 
 function getUglyNumber(num) {
-
+  var output = [];
+  for (var i = 2; i <= num; i++) {
+    var iCopy = i;
+    var prime = [2, 3, 5];
+    for (var j = 0; j < prime.length;) {
+      if (iCopy % prime[j] === 0) {
+        iCopy /= prime[j];
+      } else {
+        j++;
+      }
+    }
+    if (iCopy === 1) {
+      output.push(i);
+    }
+  }
+  return output;
 }
 
 console.log(getUglyNumber(10)); //[ 2, 3, 4, 5, 6, 8, 9, 10 ]
