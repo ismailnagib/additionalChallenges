@@ -30,8 +30,6 @@ function trainSeating (penumpang) {
       jumlahGerbong++
     }
   }
-  console.log(jumlahGerbong);
-  console.log(namaGerbong);
   var output = {};
   for (var k = 0; k < jumlahGerbong; k++) {
     output[namaGerbong[k][0]] = [];
