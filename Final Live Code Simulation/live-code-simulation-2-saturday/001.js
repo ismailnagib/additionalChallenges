@@ -51,7 +51,7 @@ WHILE i < 8
   // STORE 'num' with any number
   // STORE 'output' with empty array
   // STORE 'i' with 2
-  // WHILE 'i' < num
+  // WHILE 'i' <= num
   //   STORE 'check' with true
   //   IF 'i' > 3 AND ('i' % 2 = 0 OR i % 3 = 0) THEN
   //     CHANGE 'check' to false
@@ -75,7 +75,7 @@ WHILE i < 8
 // CODE
 function getPrime(num) {
   var output = [];
-  for (i = 2; i < num; i++) {
+  for (i = 2; i <= num; i++) {
     var check = true;
     if (i > 3 && (i % 2 === 0 || i % 3 === 0)) {
       check = false;
