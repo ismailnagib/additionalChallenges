@@ -55,6 +55,14 @@ function operationEvaluator(operation) {
   }
 }
 
+// // CARA DARI TADEUS
+// function operationEvaluator(operation) {
+//   if (operation.op == undefined || isNaN(operation.op) === true) { return operation;} // base-case; or end of getting deeper
+//   if (operation.op === '+'){ return operationEvaluator(operation.left) + operationEvaluator(operation.right)}
+//   if (operation.op === '-'){ return operationEvaluator(operation.left) - operationEvaluator(operation.right)}
+//   if (operation.op === '*'){ return operationEvaluator(operation.left) * operationEvaluator(operation.right)}
+//   if (operation.op === '/'){ return operationEvaluator(operation.left) / operationEvaluator(operation.right)}
+// }
 
 var op1 = {
   left: 5,
